@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="33.559" tests="10" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="13.632" tests="3" errors="0" skipped="0" failures="3">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="UY"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-11.0.7.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -e -Dbrowser=chrome"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dbrowser=chrome"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="maven.home" value="/Users/emilianorodriguez/Desktop/Cursoselenium/apache-maven-3.6.3"/>
@@ -64,26 +64,31 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="basePageNavigation" classname="Academy.HomePage" time="3.475"/>
-  <testcase name="testContactForm" classname="Academy.HomePage" time="4.679"/>
-  <testcase name="testContactForm" classname="Academy.HomePage" time="3.222">
-    <failure message="Keys to send should be a not null CharSequence" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at Academy.HomePage.testContactForm(HomePage.java:123)
+  <testcase name="basePageNavigation" classname="Academy.HomePage" time="4.444">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at Academy.HomePage.basePageNavigation(HomePage.java:43)
+</failure>
+    <system-out><![CDATA[chrome
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 40486
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+jul. 16, 2020 4:54:50 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="testContactForm" classname="Academy.HomePage" time="0.003">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at Academy.HomePage.testContactForm(HomePage.java:126)
 </failure>
   </testcase>
-  <testcase name="validateAppNavBar" classname="Academy.HomePage" time="0.081"/>
-  <testcase name="validateAppTitle" classname="Academy.HomePage" time="0.031"/>
-  <testcase name="validateNavigationBarCareers" classname="Academy.HomePage" time="2.319"/>
-  <testcase name="validateNavigationBarContact" classname="Academy.HomePage" time="2.399">
-    <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
-	at Academy.HomePage.validateNavigationBarContact(HomePage.java:111)
-</failure>
-  </testcase>
-  <testcase name="validateNavigationBarHome" classname="Academy.HomePage" time="3.162"/>
-  <testcase name="validateNavigationBarServices" classname="Academy.HomePage" time="3.168"/>
-  <testcase name="validateNavigationBarWork" classname="Academy.HomePage" time="3.135">
-    <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
-	at Academy.HomePage.validateNavigationBarWork(HomePage.java:88)
+  <testcase name="testContactForm" classname="Academy.HomePage" time="0.001">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at Academy.HomePage.testContactForm(HomePage.java:126)
 </failure>
   </testcase>
 </testsuite>

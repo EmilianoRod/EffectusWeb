@@ -8,9 +8,8 @@
     <classes>
       <class name="Academy.HomePage">
         <methods>
-          <include name="validateNavigationBarContact"/>
-          <include name="validateNavigationBarWork"/>
-          <include name="testContactForm" invocation-numbers="1"/>
+          <include name="testContactForm" invocation-numbers="0 1"/>
+          <include name="basePageNavigation"/>
           <include name="initialize"/>
           <include name="teardown"/>
         </methods>

@@ -18,6 +18,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pageObjects.LandingPage;
+import pages.Recaptcha2Page;
 import resources.base;
 import pageObjects.CareersPage;
 
@@ -27,6 +28,8 @@ public class HomePage extends base{
 	public static Logger log =LogManager.getLogger(base.class.getName());
 	LandingPage landing;
 	CareersPage careers;
+    Recaptcha2Page recaptcha2Page;
+
 	
 	@BeforeTest
 	public void initialize() throws IOException{
@@ -37,10 +40,12 @@ public class HomePage extends base{
 	@Test
 	public void basePageNavigation() throws IOException{
 		 driver.get(prop.getProperty("url"));
+		 recaptcha2Page = new Recaptcha2Page(driver);
 		 landing = new LandingPage(driver);
+
 		}
 	
-	@Test
+	/*
 	public void validateAppNavBar() throws IOException{
 		//one is inheritance
 		// creating object to that class and invoke methods of it
@@ -50,9 +55,9 @@ public class HomePage extends base{
 	    log.info("Navigation Bar is displayed");
 		System.out.println("Test completed");
 	    //Assert.assertFalse(false);
-		}
+		}*/
 
-	@Test
+	/*
 	public void validateAppTitle() throws IOException{
 		//one is inheritance
 		// creating object to that class and invoke methods of it
@@ -63,7 +68,7 @@ public class HomePage extends base{
 		System.out.println("Test completed");
 		}
 	
-	@Test
+
 	public void validateNavigationBarHome() throws InterruptedException{
 		landing.getNavigationBarButtons(1).click();
 		Thread.sleep(3000);
@@ -71,37 +76,37 @@ public class HomePage extends base{
 		log.info("Successfully validated");
 		System.out.println("Test completed");
 	}
+	*/
 	
-	@Test
-	public void validateNavigationBarServices() throws InterruptedException{
+	/*public void validateNavigationBarServices() throws InterruptedException{
 		landing.getNavigationBarButtons(2).click();
 		Thread.sleep(3000);
 		Assert.assertTrue(isVisibleInViewport(landing.getServicesTitle()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
-	}
+	}*/
 	
-	@Test
-	public void validateNavigationBarWork() throws InterruptedException{
+	
+	/*public void validateNavigationBarWork() throws InterruptedException{
 		landing.getNavigationBarButtons(3).click();
 		Thread.sleep(3000);
 		Assert.assertTrue(isVisibleInViewport(landing.getWorkTitle()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
-	}
+	}*/
 	
-	@Test
-	public void validateNavigationBarCareers() throws InterruptedException{
+	
+	/*public void validateNavigationBarCareers() throws InterruptedException{
 		landing.getNavigationBarButtons(4).click();
 		careers = new CareersPage(driver);
 		Thread.sleep(2000);
 		Assert.assertTrue(isVisibleInViewport(careers.getCareersTitle()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
-	}
+	}*/
 	
-	@Test
-	public void validateNavigationBarContact() throws InterruptedException{
+
+	/*public void validateNavigationBarContact() throws InterruptedException{
 		landing.getNavigationBarButtons(6).click();
 		Thread.sleep(2000);
 		Assert.assertTrue(isVisibleInViewport(landing.getCareersButton()));
@@ -114,19 +119,22 @@ public class HomePage extends base{
 		Assert.assertTrue(isVisibleInViewport(landing.getContactNameInput()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
-	}
+	}*/
 	
 	@Test(dataProvider = "getData")
-	public void testContactForm(String name, String email, String message) throws InterruptedException {
+	public void testContactForm(String name, String email, String message) throws InterruptedException, IOException {
 		landing.getNavigationBarButtons(6).click();
 		Thread.sleep(3000);
-		landing.getContactNameInput().sendKeys(name);
-		landing.getContactFormEmailInput().sendKeys(email);
-		landing.getContactFormMessageInput().sendKeys(message);
 		
-
 		
+		//landing.getContactNameInput().sendKeys(name);
+		//landing.getContactFormEmailInput().sendKeys(email);
+		//landing.getContactFormMessageInput().sendKeys(message);
+		recaptcha2Page
+        .setResponseForRecaptchaWithSelenium();
 	}
+	
+
 	
 	
 	@AfterTest

@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 33.559 s <<< FAILURE! - in TestSuite
-testContactForm(Academy.HomePage)  Time elapsed: 3.222 s  <<< FAILURE!
-java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at Academy.HomePage.testContactForm(HomePage.java:123)
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 13.632 s <<< FAILURE! - in TestSuite
+basePageNavigation(Academy.HomePage)  Time elapsed: 4.444 s  <<< FAILURE!
+java.lang.NullPointerException
+	at Academy.HomePage.basePageNavigation(HomePage.java:43)
 
-validateNavigationBarContact(Academy.HomePage)  Time elapsed: 2.399 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at Academy.HomePage.validateNavigationBarContact(HomePage.java:111)
+testContactForm(Academy.HomePage)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.NullPointerException
+	at Academy.HomePage.testContactForm(HomePage.java:126)
 
-validateNavigationBarWork(Academy.HomePage)  Time elapsed: 3.135 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at Academy.HomePage.validateNavigationBarWork(HomePage.java:88)
+testContactForm(Academy.HomePage)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at Academy.HomePage.testContactForm(HomePage.java:126)
 

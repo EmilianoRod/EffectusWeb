@@ -88,5 +88,6 @@ public class LandingPage {
 		return driver.findElement(contactTitle);
 	}
 	
+
 }
 
