@@ -2,6 +2,10 @@ package Academy;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
@@ -17,8 +21,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import pageObjects.CalendlyPage;
 import pageObjects.LandingPage;
 import resources.base;
+import pageObjects.BlogPage;
 import pageObjects.CareersPage;
 
 public class HomePage extends base{
@@ -27,20 +33,22 @@ public class HomePage extends base{
 	public static Logger log =LogManager.getLogger(base.class.getName());
 	LandingPage landing;
 	CareersPage careers;
+	BlogPage blog;
+	CalendlyPage calendly;
 	
 	@BeforeTest
 	public void initialize() throws IOException{
-		 driver = initializeDriver();
-		 wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driver = initializeDriver();
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		basePageNavigation();
+	}
+
+	public void basePageNavigation() throws IOException{
+		driver.get(prop.getProperty("url"));
+		landing = new LandingPage(driver);
 	}
 	
-	@Test
-	public void basePageNavigation() throws IOException{
-		 driver.get(prop.getProperty("url"));
-		 landing = new LandingPage(driver);
-		}
-	
-	@Test
+    @Test
 	public void validateAppNavBar() throws IOException{
 		//one is inheritance
 		// creating object to that class and invoke methods of it
@@ -80,17 +88,17 @@ public class HomePage extends base{
 		log.info("Successfully validated");
 		System.out.println("Test completed");
 	}
-	
+
 	@Test
 	public void validateNavigationBarWork() throws InterruptedException{
 		landing.getNavigationBarButtons(3).click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		Assert.assertTrue(isVisibleInViewport(landing.getWorkTitle()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
 	}
 	
-	@Test
+    @Test
 	public void validateNavigationBarCareers() throws InterruptedException{
 		landing.getNavigationBarButtons(4).click();
 		careers = new CareersPage(driver);
@@ -99,8 +107,44 @@ public class HomePage extends base{
 		log.info("Successfully validated");
 		System.out.println("Test completed");
 	}
-	
+
 	@Test
+	public void validateUnderlinedNavigationBar() throws InterruptedException {
+		Set<Integer> a = new HashSet<Integer>();
+		a.addAll(Arrays.asList(new Integer[] {1, 2, 3, 4, 6}));
+		for(int i : a) {
+			landing.getNavigationBarButtons(i).click();
+			Thread.sleep(2000);
+			Assert.assertEquals(landing.getNavigationBarButtons(i).getAttribute("class"), "isSelected");
+		}
+	}
+
+	@Test
+	public void validateLetsTalkButton() throws InterruptedException {
+		Thread.sleep(2000);
+		landing.getLetsTalkButton().click();
+		Thread.sleep(2000);
+		Set<String> handles = landing.driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();
+		String parentWindowId = it.next();
+		String childWindowId = it.next();
+		landing.driver.switchTo().window(childWindowId);
+		calendly = new CalendlyPage(driver);
+		Assert.assertTrue(calendly.getCalendar().isDisplayed());
+	}
+
+	@Test
+	public void validateOurWorkCarousel(){
+		landing.getNavigationBarButtons(3).click();
+		String[] array = {"Honeypot", "Silbo", "OnPace+", "APunta Taxi", "AskMe", "FPS", "Rivelin"};
+		for(int i=0; i<6 ; i++){
+			Assert.assertEquals(landing.getWorkCarouselTitle().getText(), array[i]);
+			landing.getWorkCarouselRightButton().click();
+		}
+	}
+
+	
+	/*
 	public void validateNavigationBarContact() throws InterruptedException{
 		landing.getNavigationBarButtons(6).click();
 		Thread.sleep(2000);
@@ -114,38 +158,25 @@ public class HomePage extends base{
 		Assert.assertTrue(isVisibleInViewport(landing.getContactNameInput()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
-	}
+	}*/
 	
-	@Test(dataProvider = "getData")
-	public void testContactForm(String name, String email, String message) throws InterruptedException {
-		landing.getNavigationBarButtons(6).click();
+/*
+	public void validateNavigationBarBlog() throws InterruptedException{
+		landing.getNavigationBarButtons(5).click();
 		Thread.sleep(3000);
-		landing.getContactNameInput().sendKeys(name);
-		landing.getContactFormEmailInput().sendKeys(email);
-		landing.getContactFormMessageInput().sendKeys(message);
-		
-
-		
+		blog = new BlogPage(driver);
+		Assert.assertTrue(isVisibleInViewport(blog.getBlogHeader()));
+		Assert.assertTrue(isVisibleInViewport(blog.getBlogTitle()));
+		Assert.assertTrue(isVisibleInViewport(blog.getBlogSubtitle()));
+		blog.driver.navigate().back();
+		log.info("Successfully validated");
+		System.out.println("Test completed");
 	}
-	
+	*/
 	
 	@AfterTest
 	public void teardown(){
-		driver.close();	
+		driver.close();
 	}
-	
-	@DataProvider
-	
-	public Object[][] getData(){
-		// Row stands for how many different data types test should run
-	   //coloumn stands for how many values per each test		
-		Object[][] data = new Object[2][3];
-		
-		data[0][0] = "Prueba1";
-		data[0][1] = "erodriguez@effectussofware.com";
-		data[0][2] = "Message";
-		
-		
-		return data;
-	}
+
 }

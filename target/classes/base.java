@@ -18,7 +18,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-import com.DeathByCaptcha.SocketClient;
 
 
 
@@ -35,31 +34,30 @@ public class base {
 
 	public static  WebDriver driver;
 	public Properties prop;
-public WebDriver initializeDriver() throws IOException{
+   public WebDriver initializeDriver() throws IOException{
 	
- prop= new Properties();
+ prop = new Properties();
  //System.getProperty("user.dir")
- FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"//src//main//java//resources//data.properties");
-
-prop.load(fis);
+ FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//java//resources//data.properties");
+ prop.load(fis); 
 //mvn test -Dbrowser=chrome
 
 //String browserName=System.getProperty("browser");  // Uncomment this line if you are sending parameter from Maven
-String browserName=prop.getProperty("browser");// comment this line if you are sending parameter from Maven
+String browserName=prop.getProperty("browser"); //comment this line if you are sending parameter from Maven
 System.out.println(browserName);
 
-if(browserName.contains("chrome"))
-{
+if(browserName.contains("chrome")) {
 	 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//java//resources//chromedriver 7");
-	 ChromeOptions options =new ChromeOptions();
+	 ChromeOptions options = new ChromeOptions();
 	 if(browserName.contains("headless")){
 	  options.addArguments("headless");
 	 }
 driver= new ChromeDriver(options);
+	 driver.manage().window().maximize();
 		//execute in chrome driver
 	
 }else if (browserName.equals("firefox")){
-	 System.setProperty("webdriver.gecko.driver", "C:\\Users\\Owner\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+	 System.setProperty("webdriver.gecko.driver", "/Users/emilianorodriguez/eclipse/EffeWeb/src/main/java/resources/geckodriver");
 	 driver= new FirefoxDriver();
 	//firefox code
 }
@@ -84,7 +82,7 @@ public String getScreenShotPath(String testCaseName,WebDriver driver) throws IOE
 
 public Boolean isVisibleInViewport(WebElement element) {
 	  WebDriver driver = ((RemoteWebElement)element).getWrappedDriver();
-
+	  
 	  return (Boolean)((JavascriptExecutor)driver).executeScript(
 	      "var elem = arguments[0],                 " +
 	      "  box = elem.getBoundingClientRect(),    " +
@@ -98,21 +96,4 @@ public Boolean isVisibleInViewport(WebElement element) {
 	      "return false;                            "
 	      , element);
 	}
-
-public void verifyCaptcha(WebDriver driver) throws IOException{
-	
-	
-	byte[] arrScreen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-	BufferedImage imageScreen = ImageIO.read(new ByteArrayInputStream(arrScreen));
-	WebElement cap = driver.findElement(By.id("rc-anchor-container"));
-	Dimension capDimension = cap.getSize();
-	Point capLocation = cap.getLocation();
-	BufferedImage imgCap = imageScreen.getSubimage(capLocation.x, capLocation.y, capDimension.width, capDimension.height);
-	ByteArrayOutputStream os = new ByteArrayOutputStream();
-	ImageIO.write(imgCap, "png", os);
-	
-	SocketClient client = new SocketClient("user", "password");
-	Captcha res = client.decode(new ByteArrayInputStream(os.toByteArray()));
-}
-
 }

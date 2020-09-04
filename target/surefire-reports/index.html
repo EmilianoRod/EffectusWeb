@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,31 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods, 3 failed,   7 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="testContactForm(null, null, null)">testContactForm(null, null, null)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="validateNavigationBarContact">validateNavigationBarContact</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="validateNavigationBarWork">validateNavigationBarWork</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -124,16 +100,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="basePageNavigation">basePageNavigation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="testContactForm(Prueba1, erodriguez@effectussofware.com, Message)">testContactForm(Prueba1, erodriguez@effectussofware.com, Message)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="validateAppNavBar">validateAppNavBar</a> <!-- method navigator-link -->
@@ -159,6 +125,11 @@
                         <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="validateNavigationBarServices">validateNavigationBarServices</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Academy.HomePage" class="method navigator-link" hash-for-method="validateNavigationBarWork">validateNavigationBarWork</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -171,73 +142,12 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">Academy.HomePage</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testContactForm(null, null, null)">
-                  </a> <!-- testContactForm(null, null, null) -->
-                  <span class="method-name">testContactForm</span>
-                  <span class="parameters">(null, null, null)</span>
-                  <div class="stack-trace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
-	at Academy.HomePage.testContactForm(HomePage.java:123)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateNavigationBarContact">
-                  </a> <!-- validateNavigationBarContact -->
-                  <span class="method-name">validateNavigationBarContact</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at Academy.HomePage.validateNavigationBarContact(HomePage.java:111)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-... Removed 34 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateNavigationBarWork">
-                  </a> <!-- validateNavigationBarWork -->
-                  <span class="method-name">validateNavigationBarWork</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at Academy.HomePage.validateNavigationBarWork(HomePage.java:88)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-... Removed 34 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">Academy.HomePage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="basePageNavigation">
-                  </a> <!-- basePageNavigation -->
-                  <span class="method-name">basePageNavigation</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testContactForm(Prueba1, erodriguez@effectussofware.com, Message)">
-                  </a> <!-- testContactForm(Prueba1, erodriguez@effectussofware.com, Message) -->
-                  <span class="method-name">testContactForm</span>
-                  <span class="parameters">(Prueba1, erodriguez@effectussofware.com, Message)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="validateAppNavBar">
@@ -273,12 +183,19 @@
                   <span class="method-name">validateNavigationBarServices</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateNavigationBarWork">
+                  </a> <!-- validateNavigationBarWork -->
+                  <span class="method-name">validateNavigationBarWork</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/emilianorodriguez/eclipse/EffeWeb/testng.xml</span>
+            <span class="header-content">/Users/emilianorodriguez/Desktop/Effectus Web Automatizacion/testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -288,11 +205,11 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;Academy.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Validating User login&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Validate home&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;Academy.HomePage&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Validating User login --&gt;
+  &lt;/test&gt; &lt;!-- Validate home --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -304,7 +221,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Validating User login (1 class)</span>
+                <span class="test-name">Validate home (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -330,52 +247,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testContactForm')
+data.setCell(0, 1, 'validateNavigationBarWork')
 data.setCell(0, 2, 'Academy.HomePage')
-data.setCell(0, 3, 4682);
+data.setCell(0, 3, 6121);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'basePageNavigation')
+data.setCell(1, 1, 'validateNavigationBarHome')
 data.setCell(1, 2, 'Academy.HomePage')
-data.setCell(1, 3, 3461);
+data.setCell(1, 3, 3204);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'validateNavigationBarServices')
 data.setCell(2, 2, 'Academy.HomePage')
-data.setCell(2, 3, 3168);
+data.setCell(2, 3, 3118);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'validateNavigationBarHome')
+data.setCell(3, 1, 'validateNavigationBarCareers')
 data.setCell(3, 2, 'Academy.HomePage')
-data.setCell(3, 3, 3161);
+data.setCell(3, 3, 2308);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testContactForm')
+data.setCell(4, 1, 'validateAppNavBar')
 data.setCell(4, 2, 'Academy.HomePage')
-data.setCell(4, 3, 3152);
+data.setCell(4, 3, 571);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validateNavigationBarWork')
+data.setCell(5, 1, 'validateAppTitle')
 data.setCell(5, 2, 'Academy.HomePage')
-data.setCell(5, 3, 3135);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'validateNavigationBarContact')
-data.setCell(6, 2, 'Academy.HomePage')
-data.setCell(6, 3, 2399);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'validateNavigationBarCareers')
-data.setCell(7, 2, 'Academy.HomePage')
-data.setCell(7, 3, 2318);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'validateAppNavBar')
-data.setCell(8, 2, 'Academy.HomePage')
-data.setCell(8, 3, 81);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'validateAppTitle')
-data.setCell(9, 2, 'Academy.HomePage')
-data.setCell(9, 3, 30);
+data.setCell(5, 3, 294);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -407,54 +308,32 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">basePageNavigation</span>
-                <span class="method-start">3910 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testContactForm(Prueba1, erodriguez@effectussofware.com, Message)</span>
-                <span class="method-start">7384 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testContactForm(null, null, null)</span>
-                <span class="method-start">12067 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">validateAppNavBar</span>
-                <span class="method-start">15650 ms</span>
+                <span class="method-start">10030 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateAppTitle</span>
-                <span class="method-start">15734 ms</span>
+                <span class="method-start">10614 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateNavigationBarCareers</span>
-                <span class="method-start">15765 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">validateNavigationBarContact</span>
-                <span class="method-start">18084 ms</span>
+                <span class="method-start">10910 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateNavigationBarHome</span>
-                <span class="method-start">20792 ms</span>
+                <span class="method-start">13219 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateNavigationBarServices</span>
-                <span class="method-start">23954 ms</span>
+                <span class="method-start">16423 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">validateNavigationBarWork</span>
-                <span class="method-start">27123 ms</span>
+                <span class="method-start">19541 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">30735 ms</span>
+                <span class="method-start">25665 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
