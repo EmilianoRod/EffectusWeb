@@ -8,10 +8,16 @@
     <classes>
       <class name="Academy.HomePage">
         <methods>
+          <include name="validateNavigationBarCareers"/>
+          <include name="validateNavigationBarContact"/>
           <include name="validateNavigationBarWork"/>
-          <include name="validateAppTitle"/>
+          <include name="validateUnderlinedNavigationBar"/>
+          <include name="validateNavigationBarServices"/>
           <include name="initialize"/>
+          <include name="validateOurWorkCarousel"/>
           <include name="teardown"/>
+          <include name="validateNavigationBarHome"/>
+          <include name="validateTeamImagesDisplayed"/>
         </methods>
       </class> <!-- Academy.HomePage -->
     </classes>

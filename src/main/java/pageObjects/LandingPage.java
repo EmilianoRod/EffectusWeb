@@ -24,6 +24,7 @@ public class LandingPage {
 	private By contactMeetingButton = By.xpath("//div[@name='contact']//div//div//div//div//ul//li//button");
 	private By workCarouselTitle = By.xpath("/html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/h2[1]");
 	private By workCarouselRightButton = By.xpath("//div[2]//div[1]//img[2]");
+	private By meetOurTeamButton = By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[2]/a[1]");
 	
 	public LandingPage(WebDriver driver){
 		// TODO Auto-generated constructor stub
@@ -32,6 +33,10 @@ public class LandingPage {
 
 	public WebElement getTitle(){
 		return driver.findElement(title);
+	}
+
+	public WebElement getMeetOurTeamButton(){
+		return driver.findElement(meetOurTeamButton);
 	}
 
 	public WebElement getWorkCarouselRightButton(){

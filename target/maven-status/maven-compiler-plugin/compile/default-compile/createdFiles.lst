@@ -3,5 +3,6 @@ pageObjects/BlogPage.class
 resources/base.class
 pageObjects/CareersPage.class
 resources/ExtentReporterNG.class
+pageObjects/TeamPage.class
 pageObjects/CalendlyPage.class
 Academy/App.class

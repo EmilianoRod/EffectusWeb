@@ -1,41 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-04T12:35:13 UYT" name="Suite" finished-at="2020-09-04T12:35:39 UYT" duration-ms="25838">
+  <suite started-at="2020-09-04T18:24:24 UYT" name="Suite" finished-at="2020-09-04T18:25:39 UYT" duration-ms="74804">
     <groups>
     </groups>
-    <test started-at="2020-09-04T12:35:13 UYT" name="Validate home" finished-at="2020-09-04T12:35:39 UYT" duration-ms="25838">
+    <test started-at="2020-09-04T18:24:24 UYT" name="Validate home" finished-at="2020-09-04T18:25:39 UYT" duration-ms="74804">
       <class name="Academy.HomePage">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:13 UYT" name="initialize" finished-at="2020-09-04T12:35:23 UYT" duration-ms="9936" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:24 UYT" name="initialize" finished-at="2020-09-04T18:24:38 UYT" duration-ms="13553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="validateAppNavBar()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:23 UYT" name="validateAppNavBar" finished-at="2020-09-04T12:35:24 UYT" duration-ms="571" status="PASS">
+        <test-method signature="validateAppNavBar()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:38 UYT" name="validateAppNavBar" finished-at="2020-09-04T18:24:38 UYT" duration-ms="388" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateAppNavBar -->
-        <test-method signature="validateAppTitle()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:24 UYT" name="validateAppTitle" finished-at="2020-09-04T12:35:24 UYT" duration-ms="294" status="PASS">
+        <test-method signature="validateAppTitle()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:38 UYT" name="validateAppTitle" finished-at="2020-09-04T18:24:39 UYT" duration-ms="604" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateAppTitle -->
-        <test-method signature="validateNavigationBarCareers()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:24 UYT" name="validateNavigationBarCareers" finished-at="2020-09-04T12:35:26 UYT" duration-ms="2308" status="PASS">
+        <test-method signature="validateLetsTalkButton()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:39 UYT" name="validateLetsTalkButton" finished-at="2020-09-04T18:24:48 UYT" duration-ms="9333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLetsTalkButton -->
+        <test-method signature="validateNavigationBarCareers()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:48 UYT" name="validateNavigationBarCareers" finished-at="2020-09-04T18:24:51 UYT" duration-ms="2387" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNavigationBarCareers -->
-        <test-method signature="validateNavigationBarHome()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:26 UYT" name="validateNavigationBarHome" finished-at="2020-09-04T12:35:29 UYT" duration-ms="3204" status="PASS">
+        <test-method signature="validateNavigationBarContact()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:51 UYT" name="validateNavigationBarContact" finished-at="2020-09-04T18:24:53 UYT" duration-ms="2600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateNavigationBarContact -->
+        <test-method signature="validateNavigationBarHome()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:53 UYT" name="validateNavigationBarHome" finished-at="2020-09-04T18:24:57 UYT" duration-ms="3313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNavigationBarHome -->
-        <test-method signature="validateNavigationBarServices()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:29 UYT" name="validateNavigationBarServices" finished-at="2020-09-04T12:35:33 UYT" duration-ms="3118" status="PASS">
+        <test-method signature="validateNavigationBarServices()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:24:57 UYT" name="validateNavigationBarServices" finished-at="2020-09-04T18:25:00 UYT" duration-ms="3242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNavigationBarServices -->
-        <test-method signature="validateNavigationBarWork()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:33 UYT" name="validateNavigationBarWork" finished-at="2020-09-04T12:35:39 UYT" duration-ms="6121" status="PASS">
+        <test-method signature="validateNavigationBarWork()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:25:00 UYT" name="validateNavigationBarWork" finished-at="2020-09-04T18:25:06 UYT" duration-ms="6191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNavigationBarWork -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Academy.HomePage@73db4768]" started-at="2020-09-04T12:35:39 UYT" name="teardown" finished-at="2020-09-04T12:35:39 UYT" duration-ms="170" status="PASS">
+        <test-method signature="validateOurWorkCarousel()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:25:06 UYT" name="validateOurWorkCarousel" finished-at="2020-09-04T18:25:19 UYT" duration-ms="13347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateOurWorkCarousel -->
+        <test-method signature="validateTeamImagesDisplayed()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:25:19 UYT" name="validateTeamImagesDisplayed" finished-at="2020-09-04T18:25:27 UYT" duration-ms="7931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateTeamImagesDisplayed -->
+        <test-method signature="validateUnderlinedNavigationBar()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:25:27 UYT" name="validateUnderlinedNavigationBar" finished-at="2020-09-04T18:25:39 UYT" duration-ms="11509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateUnderlinedNavigationBar -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Academy.HomePage@d23e042]" started-at="2020-09-04T18:25:39 UYT" name="teardown" finished-at="2020-09-04T18:25:39 UYT" duration-ms="281" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

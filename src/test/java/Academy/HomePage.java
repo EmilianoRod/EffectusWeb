@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,11 +22,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import pageObjects.CalendlyPage;
-import pageObjects.LandingPage;
+import pageObjects.*;
 import resources.base;
-import pageObjects.BlogPage;
-import pageObjects.CareersPage;
 
 public class HomePage extends base{
 	public WebDriver driver;
@@ -35,6 +33,7 @@ public class HomePage extends base{
 	CareersPage careers;
 	BlogPage blog;
 	CalendlyPage calendly;
+	TeamPage teamPage;
 	
 	@BeforeTest
 	public void initialize() throws IOException{
@@ -117,6 +116,8 @@ public class HomePage extends base{
 			Thread.sleep(2000);
 			Assert.assertEquals(landing.getNavigationBarButtons(i).getAttribute("class"), "isSelected");
 		}
+		log.info("Successfully validated");
+		System.out.println("Test completed");
 	}
 
 	@Test
@@ -131,20 +132,44 @@ public class HomePage extends base{
 		landing.driver.switchTo().window(childWindowId);
 		calendly = new CalendlyPage(driver);
 		Assert.assertTrue(calendly.getCalendar().isDisplayed());
+		landing.driver.close();
+		landing.driver.switchTo().window(parentWindowId);
+		log.info("Successfully validated");
+		System.out.println("Test completed");
 	}
 
 	@Test
-	public void validateOurWorkCarousel(){
+	public void validateOurWorkCarousel() throws InterruptedException {
 		landing.getNavigationBarButtons(3).click();
 		String[] array = {"Honeypot", "Silbo", "OnPace+", "APunta Taxi", "AskMe", "FPS", "Rivelin"};
 		for(int i=0; i<6 ; i++){
+			Thread.sleep(2000);
 			Assert.assertEquals(landing.getWorkCarouselTitle().getText(), array[i]);
 			landing.getWorkCarouselRightButton().click();
 		}
+		log.info("Successfully validated");
+		System.out.println("Test completed");
 	}
 
-	
-	/*
+	@Test
+	public void validateTeamImagesDisplayed() throws InterruptedException {
+		landing.getNavigationBarButtons(1).click();
+		Thread.sleep(2000);
+		landing.getMeetOurTeamButton().click();
+		teamPage = new TeamPage(driver);
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		for(int i = 1 ; i<24 ; i++){
+			Assert.assertTrue(teamPage.getOutTeamImages(i).isDisplayed());
+			js.executeScript("window.scrollBy(0,220)", "");
+		}
+		log.info("Successfully validated");
+		System.out.println("Test completed");
+	}
+
+
+
+	@Test
 	public void validateNavigationBarContact() throws InterruptedException{
 		landing.getNavigationBarButtons(6).click();
 		Thread.sleep(2000);
@@ -158,7 +183,7 @@ public class HomePage extends base{
 		Assert.assertTrue(isVisibleInViewport(landing.getContactNameInput()));
 		log.info("Successfully validated");
 		System.out.println("Test completed");
-	}*/
+	}
 	
 /*
 	public void validateNavigationBarBlog() throws InterruptedException{
